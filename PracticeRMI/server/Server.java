@@ -12,6 +12,7 @@ public class Server {
 
 
             System.setProperty("java.rmi.Server.hostname","127.0.0.1");
+            System.out.println("Server has started");
 
             ProductImpl p1 = new  ProductImpl("Phone", "Samsung Galaxy S24 Ultra", 1200);
             ProductImpl p2 = new  ProductImpl("Controller", "Xbox controller", 50);
@@ -31,6 +32,8 @@ public class Server {
             registry.rebind("c",stub2);
             registry.rebind("b",stub3);
             registry.rebind("g",stub4);
+
+            System.out.println("Exporting and binding of objects has been completed ...");
 
         } catch(Exception e) {
 
